@@ -1,3 +1,4 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
 import { About } from "./components/About";
@@ -9,38 +10,46 @@ import { Project } from "./components/Project";
 import { Skill } from "./components/Skill";
 
 function App() {
-  return (
-    <>
-      {/* <!-- dar mode toggler --> */}
+    return (
+        <>
+            {/* <!-- dar mode toggler --> */}
 
-      <input type="checkbox" id="darkMode" />
-      <div className="wrapper">
-        <label htmlFor="darkMode">
-          <i className="fa-solid fa-circle-half-stroke"></i>
-        </label>
-        {/* <!-- navbar --> */}
-        <Navbar />
+            <input type="checkbox" id="darkMode" />
+            <div className="wrapper">
+                <label htmlFor="darkMode">
+                    <i className="fa-solid fa-circle-half-stroke"></i>
+                </label>
+                {/* <!-- navbar --> */}
+                <Navbar />
 
-        {/* <!-- hero section  --> */}
-        <Hero />
+                <Routes>
+                    <Route path="/" element={<Hero />} />
+                    <Route path="skills" element={<Skill />} />
+                    <Route path="project" element={<Project />} />
+                    <Route path="about" element={<About />} />
+                    <Route path="contact" element={<Contact />} />
+                </Routes>
 
-        {/* <!-- skills section  --> */}
-        <Skill />
+                {/* <!-- hero section  --> */}
+                {/* <Hero /> */}
 
-        {/* <!-- project section  --> */}
-        <Project />
+                {/* <!-- skills section  --> */}
+                {/* <Skill /> */}
 
-        {/* <!-- about me section  --> */}
-        <About />
+                {/* <!-- project section  --> */}
+                {/* <Project /> */}
 
-        {/* <!-- Contact section  --> */}
-        <Contact />
+                {/* <!-- about me section  --> */}
+                {/* <About /> */}
 
-        {/* <!-- Footer section  --> */}
-        <Footer />
-      </div>
-    </>
-  );
+                {/* <!-- Contact section  --> */}
+                {/* <Contact /> */}
+
+                {/* <!-- Footer section  --> */}
+                <Footer />
+            </div>
+        </>
+    );
 }
 
 export default App;
